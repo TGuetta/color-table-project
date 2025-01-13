@@ -1,0 +1,21 @@
+@page "{id:int}"
+@model DeleteModel
+
+<h1>Delete Color</h1>
+
+@if (Model.Color != null)
+{
+    <p>Are you sure you want to delete the color: <strong>@Model.Color.ColorName</strong>?</p>
+
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Color.Id" />
+        <button type="submit">Yes, Delete</button>
+        <a asp-page="./Index">Cancel</a>
+    </form>
+}
+else
+{
+    <p>The color you are trying to delete does not exist.</p>
+    <a asp-page="./Index">Return to Index</a>
+}
+

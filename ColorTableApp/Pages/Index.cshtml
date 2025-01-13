@@ -1,10 +1,36 @@
-﻿@page
+@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Color Table</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Color Name</th>
+            <th>Price</th>
+            <th>Display Order</th>
+            <th>In Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var color in Model.Colors)
+        {
+            <tr>
+                <td>@color.Id</td>
+                <td>@color.ColorName</td>
+                <td>@color.Price</td>
+                <td>@color.DisplayOrder</td>
+                <td>@(color.InStock ? "Yes" : "No")</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@color.Id">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@color.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./Create">Add New Color</a>
+

@@ -1,19 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace ColorTableApp.Pages;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly AppDbContext _db;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(AppDbContext db)
     {
-        _logger = logger;
+        _db = db;
     }
 
-    public void OnGet()
-    {
+    public List<ColorItem> Colors { get; set; } = new List<ColorItem>();
 
+    public async Task OnGetAsync()
+    {
+        Colors = await _db.Colors.ToListAsync();
     }
 }
+

@@ -1,0 +1,28 @@
+@page "{id:int}"
+@model EditModel
+
+<h1>Edit Color</h1>
+
+<form method="post">
+    <input type="hidden" name="Color.Id" value="@Model.Color?.Id" />
+    <div>
+        <label for="ColorName">Color Name</label>
+        <input type="text" id="ColorName" name="Color.ColorName" value="@Model.Color?.ColorName" required>
+    </div>
+    <div>
+        <label for="Price">Price</label>
+        <input type="number" id="Price" name="Color.Price" value="@Model.Color?.Price" required>
+    </div>
+    <div>
+        <label for="DisplayOrder">Display Order</label>
+        <input type="number" id="DisplayOrder" name="Color.DisplayOrder" value="@Model.Color?.DisplayOrder" required>
+    </div>
+    <div>
+        <label for="InStock">In Stock</label>
+        <input type="hidden" name="Color.InStock" value="false" />
+        <input type="checkbox" id="InStock" name="Color.InStock" value="true" @(Model.Color?.InStock == true ? "checked" : "")>
+    </div>
+    <button type="submit">Save Changes</button>
+    <a asp-page="./Index">Cancel</a>
+</form>
+
