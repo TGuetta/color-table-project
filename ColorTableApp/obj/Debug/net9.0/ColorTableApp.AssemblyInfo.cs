@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ColorTableApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f95788e38d90e529e3105474fbc22ade5772d0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f2e8052424fbe29ed5c030e450cf83a42615b74")]
 [assembly: System.Reflection.AssemblyProductAttribute("ColorTableApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ColorTableApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

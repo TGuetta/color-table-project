@@ -16,7 +16,7 @@ public class DeleteModel : PageModel
 
     public IActionResult OnGet(int id)
     {
-        Console.WriteLine($"Fetching color with ID: {id} for deletion.");
+        //Console.WriteLine($"Fetching color with ID: {id} for deletion.");
         Color = _db.Colors.FirstOrDefault(c => c.Id == id);
 
         if (Color == null)
@@ -31,7 +31,7 @@ public class DeleteModel : PageModel
 
     public IActionResult OnPost(int id)
     {
-        Console.WriteLine($"Delete requested for color with ID: {id}");
+        //Console.WriteLine($"Delete requested for color with ID: {id}");
 
         var color = _db.Colors.FirstOrDefault(c => c.Id == id);
 

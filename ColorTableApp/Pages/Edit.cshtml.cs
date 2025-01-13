@@ -16,7 +16,7 @@ public class EditModel : PageModel
 
     public IActionResult OnGet(int id)
     {
-        Console.WriteLine($"Fetching color with ID: {id}");
+        //Console.WriteLine($"Fetching color with ID: {id}");
         Color = _db.Colors.FirstOrDefault(c => c.Id == id);
 
         if (Color == null)
@@ -25,7 +25,7 @@ public class EditModel : PageModel
             return RedirectToPage("./Index");
         }
 
-        Console.WriteLine($"Fetched color: {Color.ColorName}");
+        //Console.WriteLine($"Fetched color: {Color.ColorName}");
         return Page();
     }
 
